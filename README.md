@@ -1,1 +1,1 @@
-# mini-moda
+minimoda.github.io

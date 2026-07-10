@@ -71,18 +71,12 @@ BANNER
 .banner{
     position:relative;
     overflow:hidden;
-
-    min-height:430px;
-
+    min-height:500px;
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
-    padding:40px 20px;
-
-    background:linear-gradient(135deg,#ffeaf6,#ffffff,#e9f4ff);
+    background:linear-gradient(90deg,#ffe6f4,#ffffff,#e8f5ff);
 }
 
 .banner-texto{

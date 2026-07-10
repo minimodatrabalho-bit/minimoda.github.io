@@ -1,9 +1,5 @@
 /* ===========================
    MINI MODA
-   Desenvolvido por:
-   Hortência
-   Jéssica
-   Riquelme
 =========================== */
 
 *{
@@ -18,19 +14,23 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#fafafa;
+    background:#fafcff;
     color:#444;
     overflow-x:hidden;
 }
 
-/*============================
+/* ===========================
 HEADER
-=============================*/
+=========================== */
 
 header{
 
+    position:sticky;
+    top:0;
+    z-index:999;
+
     width:100%;
-    height:75px;
+    height:90px;
 
     background:#fff;
 
@@ -40,19 +40,21 @@ header{
 
     padding:0 7%;
 
-    position:sticky;
-    top:0;
-
     box-shadow:0 3px 15px rgba(0,0,0,.08);
 
-    z-index:999;
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
 
 }
 
 .logo img{
 
-    width:130px;
-    transition:.3s;
+    width:150px;
+    transition:.4s;
 
 }
 
@@ -85,17 +87,26 @@ nav a{
 
 }
 
+nav a:hover{
+
+    color:#ff5ca8;
+
+}
+
 nav a::after{
 
     content:"";
+
     position:absolute;
+
     left:0;
-    bottom:-6px;
+    bottom:-8px;
 
     width:0%;
     height:3px;
 
     background:#ff69b4;
+
     transition:.3s;
 
 }
@@ -106,33 +117,184 @@ nav a:hover::after{
 
 }
 
-nav a:hover{
-
-    color:#ff69b4;
-
-}
-
-/*============================
+/* ===========================
 BANNER
-=============================*/
+=========================== */
 
 .banner{
 
-    min-height:500px;
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:620px;
 
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
 
-    padding:60px 20px;
-
-    background:linear-gradient(135deg,#ffe9f5,#ffffff,#e6f2ff);
+    background:
+    radial-gradient(circle at left,#ffd8ef 0,#ffeef8 25%,transparent 40%),
+    radial-gradient(circle at right,#d9eeff 0,#eef8ff 25%,transparent 40%),
+    linear-gradient(135deg,#ffe8f4,#ffffff,#e7f4ff);
 
 }
 
+/* ALGODÕES DOCES */
+
+.banner::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-30px;
+    bottom:-10px;
+
+    width:260px;
+    height:420px;
+
+    background:url("https://pngimg.com/d/cotton_candy_PNG54.png");
+
+    background-size:contain;
+    background-repeat:no-repeat;
+
+}
+
+.banner::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-30px;
+    bottom:-10px;
+
+    width:260px;
+    height:420px;
+
+    background:url("https://pngimg.com/d/cotton_candy_PNG54.png");
+
+    background-size:contain;
+    background-repeat:no-repeat;
+
+    transform:scaleX(-1);
+
+}
+
+/* Bolinhas */
+
+.banner .bolinha{
+
+    position:absolute;
+    border-radius:50%;
+    opacity:.7;
+
+}
+
+.b1{
+
+    width:14px;
+    height:14px;
+    background:#ffc94d;
+
+    left:20%;
+    top:120px;
+
+}
+
+.b2{
+
+    width:12px;
+    height:12px;
+    background:#79d3ff;
+
+    right:22%;
+    top:150px;
+
+}
+
+.b3{
+
+    width:16px;
+    height:16px;
+    background:#ff90c5;
+
+    left:28%;
+    bottom:140px;
+
+}
+
+.b4{
+
+    width:12px;
+    height:12px;
+    background:#8ecbff;
+
+    right:28%;
+    bottom:180px;
+
+}
+
+.b5{
+
+    width:10px;
+    height:10px;
+    background:#c999ff;
+
+    left:55%;
+    top:220px;
+
+}
+
+/* Corações */
+
+.banner .heart{
+
+    position:absolute;
+
+    color:#ff8dbd;
+
+    font-size:28px;
+
+}
+
+.h1{
+
+    left:18%;
+    top:90px;
+
+}
+
+.h2{
+
+    right:18%;
+    top:120px;
+
+}
+
+.h3{
+
+    left:30%;
+    bottom:90px;
+
+}
+
+.h4{
+
+    right:30%;
+    bottom:120px;
+
+}
+
+/* Texto */
+
 .banner-texto{
+
+    position:relative;
+
+    z-index:5;
 
     max-width:760px;
 
@@ -140,20 +302,27 @@ BANNER
 
 .banner h1{
 
-    font-size:58px;
+    font-size:70px;
+
+    line-height:1.1;
+
     color:#5578d4;
+
     font-family:'Fredoka',sans-serif;
-    margin-bottom:20px;
-    line-height:65px;
+
+    margin-bottom:25px;
 
 }
 
 .banner p{
 
-    font-size:21px;
-    line-height:35px;
+    font-size:24px;
+
+    line-height:40px;
+
     color:#555;
-    margin-bottom:25px;
+
+    margin-bottom:35px;
 
 }
 
@@ -161,85 +330,90 @@ BANNER
 
     display:inline-block;
 
+    padding:18px 48px;
+
     background:#5578d4;
 
     color:#fff;
 
-    padding:16px 40px;
-
-    border-radius:50px;
-
     text-decoration:none;
 
-    font-weight:bold;
+    border-radius:60px;
+
+    font-size:20px;
+
+    font-weight:600;
 
     transition:.35s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
 
 }
 
 .btn:hover{
 
-    background:#ff69b4;
-    transform:translateY(-5px);
+    background:#ff5ca8;
+
+    transform:translateY(-4px);
 
 }
 
-/*============================
+/* ===========================
 TÍTULO
-=============================*/
+=========================== */
 
 .titulo{
 
     text-align:center;
-    padding:50px 20px 20px;
+
+    padding:70px 20px 15px;
 
 }
 
 .titulo h2{
 
-    font-size:45px;
+    font-size:52px;
+
     color:#ff5ca8;
-    font-family:'Fredoka';
+
+    font-family:'Fredoka',sans-serif;
 
 }
 
 .titulo p{
 
+    margin-top:15px;
+
     color:#666;
-    margin-top:12px;
+
+    font-size:20px;
 
 }
-
-/*============================
+/*=========================
 PRODUTOS
-=============================*/
+==========================*/
 
 .produtos{
 
     width:90%;
-    max-width:1300px;
-
-    margin:40px auto 80px;
+    max-width:1400px;
+    margin:50px auto 90px;
 
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
     gap:35px;
 
 }
 
 .card{
 
-    background:white;
+    background:#fff;
 
     border-radius:22px;
 
     overflow:hidden;
 
-    border:1px solid #eee;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
 
     transition:.35s;
 
@@ -249,9 +423,9 @@ PRODUTOS
 
 .card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
 
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
 
 }
 
@@ -263,19 +437,32 @@ PRODUTOS
 
 }
 
+.estrelas{
+
+    color:#FFD700;
+    font-size:18px;
+    letter-spacing:2px;
+    text-align:center;
+    margin-top:18px;
+
+}
+
 .card h3{
 
     color:#5578d4;
-    padding:18px;
-    font-size:24px;
+    text-align:center;
+    margin-top:10px;
+    font-size:27px;
 
 }
 
 .card p{
 
-    padding:0 18px;
-    line-height:28px;
+    text-align:center;
+    padding:12px 20px;
     color:#666;
+    min-height:70px;
+    line-height:28px;
 
 }
 
@@ -283,13 +470,15 @@ PRODUTOS
 
     display:block;
 
-    padding:20px 18px;
+    text-align:center;
 
     color:#ff5ca8;
 
-    font-size:24px;
+    font-size:28px;
 
     font-weight:bold;
+
+    margin-bottom:20px;
 
 }
 
@@ -297,19 +486,21 @@ PRODUTOS
 
     display:block;
 
-    margin:20px;
+    width:85%;
 
-    padding:14px;
+    margin:0 auto 25px;
+
+    padding:15px;
+
+    border-radius:40px;
 
     text-align:center;
 
     text-decoration:none;
 
-    border-radius:50px;
-
     background:#5578d4;
 
-    color:white;
+    color:#fff;
 
     font-weight:bold;
 
@@ -319,7 +510,7 @@ PRODUTOS
 
 .card a:hover{
 
-    background:#ff69b4;
+    background:#ff5ca8;
 
 }
 
@@ -332,11 +523,11 @@ BENEFÍCIOS
     width:90%;
     max-width:1300px;
 
-    margin:0 auto 80px;
+    margin:40px auto 90px;
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
     gap:30px;
 
@@ -346,31 +537,31 @@ BENEFÍCIOS
 
     background:#fff;
 
-    padding:40px 30px;
+    padding:45px;
 
-    border-radius:20px;
+    border-radius:25px;
 
     text-align:center;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
 .beneficios div:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
 }
 
 .beneficios i{
 
-    font-size:55px;
+    font-size:60px;
 
     color:#ff69b4;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
 }
 
@@ -378,7 +569,7 @@ BENEFÍCIOS
 
     color:#5578d4;
 
-    margin-bottom:12px;
+    margin-bottom:15px;
 
 }
 
@@ -396,10 +587,10 @@ FORMULÁRIO
 
 .form-container{
 
-    width:90%;
-    max-width:750px;
+    width:92%;
+    max-width:760px;
 
-    margin:60px auto;
+    margin:70px auto;
 
     background:#fff;
 
@@ -407,7 +598,7 @@ FORMULÁRIO
 
     border-radius:25px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 
 }
 
@@ -417,11 +608,9 @@ FORMULÁRIO
 
     color:#5578d4;
 
-    font-size:38px;
+    font-size:42px;
 
     font-family:'Fredoka',sans-serif;
-
-    margin-bottom:10px;
 
 }
 
@@ -431,13 +620,13 @@ FORMULÁRIO
 
     color:#777;
 
-    margin-bottom:35px;
+    margin:15px 0 35px;
 
 }
 
 .form-group{
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
 }
 
@@ -449,8 +638,6 @@ FORMULÁRIO
 
     font-weight:600;
 
-    color:#555;
-
 }
 
 .form-group input,
@@ -459,15 +646,13 @@ FORMULÁRIO
 
     width:100%;
 
-    padding:15px;
+    padding:16px;
 
     border:2px solid #ececec;
 
     border-radius:12px;
 
     font-size:16px;
-
-    font-family:'Poppins',sans-serif;
 
     transition:.3s;
 
@@ -511,7 +696,7 @@ FORMULÁRIO
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
@@ -522,22 +707,24 @@ FORMULÁRIO
 }
 
 /*=========================
-TABELA PEDIDOS
+TABELA
 ==========================*/
 
 #tabelaPedidos{
 
-    width:100%;
+    width:95%;
+
+    max-width:1400px;
+
+    margin:50px auto;
 
     border-collapse:collapse;
 
-    margin-top:30px;
-
-    background:#fff;
+    overflow:hidden;
 
     border-radius:18px;
 
-    overflow:hidden;
+    background:#fff;
 
     box-shadow:0 10px 35px rgba(0,0,0,.08);
 
@@ -549,13 +736,13 @@ TABELA PEDIDOS
 
     color:#fff;
 
-    padding:16px;
+    padding:18px;
 
 }
 
 #tabelaPedidos td{
 
-    padding:16px;
+    padding:18px;
 
     border-bottom:1px solid #eee;
 
@@ -565,7 +752,7 @@ TABELA PEDIDOS
 
 #tabelaPedidos tr:nth-child(even){
 
-    background:#fff8fc;
+    background:#fff7fc;
 
 }
 
@@ -587,7 +774,7 @@ footer{
 
     text-align:center;
 
-    padding:35px 20px;
+    padding:40px;
 
     margin-top:80px;
 
@@ -605,21 +792,19 @@ ANIMAÇÃO
 
 @keyframes subir{
 
-    from{
+from{
 
-        opacity:0;
+opacity:0;
+transform:translateY(40px);
 
-        transform:translateY(40px);
+}
 
-    }
+to{
 
-    to{
+opacity:1;
+transform:translateY(0);
 
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+}
 
 }
 
@@ -631,57 +816,48 @@ RESPONSIVO
 
 header{
 
-    flex-direction:column;
-
-    height:auto;
-
-    padding:20px;
+flex-direction:column;
+height:auto;
+padding:20px;
 
 }
 
 nav ul{
 
-    margin-top:20px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:18px;
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
 
 }
 
 .banner{
 
-    min-height:420px;
+min-height:520px;
 
 }
 
 .banner h1{
 
-    font-size:38px;
-
-    line-height:45px;
+font-size:44px;
 
 }
 
 .banner p{
 
-    font-size:18px;
-
-    line-height:30px;
+font-size:18px;
 
 }
 
 .titulo h2{
 
-    font-size:34px;
+font-size:38px;
 
 }
 
 .form-container{
 
-    padding:30px;
+padding:30px;
 
 }
 
@@ -691,48 +867,40 @@ nav ul{
 
 .logo img{
 
-    width:110px;
+width:110px;
 
 }
 
 .banner h1{
 
-    font-size:30px;
-
-    line-height:38px;
+font-size:34px;
+line-height:42px;
 
 }
 
 .banner p{
 
-    font-size:16px;
+font-size:16px;
+line-height:28px;
 
 }
 
 .btn{
 
-    width:100%;
+width:100%;
 
 }
 
-.btn-enviar{
+.produtos{
 
-    font-size:16px;
+grid-template-columns:1fr;
 
 }
-   .estrelas{
-    color:#FFD700;
-    font-size:18px;
-    margin:10px 18px;
-    letter-spacing:2px;
-}
 
-.card p{
-    min-height:65px;
-}
+.beneficios{
 
-.card span{
-    margin-top:10px;
+grid-template-columns:1fr;
+
 }
 
 }

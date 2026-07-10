@@ -1185,3 +1185,28 @@ header{
 .banner{
     padding-top: 120px;
 }
+.banner{
+    position: relative;
+    overflow: hidden;
+}
+
+.algodao-esquerdo{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    width: 130px;
+    z-index: 1;
+}
+
+.algodao-direito{
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    width: 130px;
+    z-index: 1;
+}
+
+.banner-texto{
+    position: relative;
+    z-index: 2;
+}

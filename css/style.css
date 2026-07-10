@@ -17,11 +17,10 @@ html{
 }
 
 body{
-
     font-family:'Poppins',sans-serif;
-    background:#fff;
+    background:#fafafa;
     color:#444;
-
+    overflow-x:hidden;
 }
 
 /*============================
@@ -31,7 +30,7 @@ HEADER
 header{
 
     width:100%;
-    height:90px;
+    height:75px;
 
     background:#fff;
 
@@ -39,20 +38,28 @@ header{
     justify-content:space-between;
     align-items:center;
 
-    padding:0 8%;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    padding:0 7%;
 
     position:sticky;
     top:0;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+
     z-index:999;
 
 }
 
 .logo img{
-    width:170px;
-    height:auto;
-    display:block;
+
+    width:130px;
+    transition:.3s;
+
+}
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
 }
 
 nav ul{
@@ -60,6 +67,12 @@ nav ul{
     display:flex;
     gap:35px;
     list-style:none;
+
+}
+
+nav ul li{
+
+    position:relative;
 
 }
 
@@ -72,54 +85,75 @@ nav a{
 
 }
 
-nav a:hover{
+nav a::after{
 
-    color:#ff5ca8;
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+
+    width:0%;
+    height:3px;
+
+    background:#ff69b4;
+    transition:.3s;
 
 }
 
-/*==========================
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+
+    color:#ff69b4;
+
+}
+
+/*============================
 BANNER
-==========================*/
+=============================*/
 
 .banner{
 
-    height:85vh;
+    min-height:500px;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 
-    background:linear-gradient(135deg,#ffe8f3,#ffffff,#e7f3ff);
+    padding:60px 20px;
+
+    background:linear-gradient(135deg,#ffe9f5,#ffffff,#e6f2ff);
 
 }
 
 .banner-texto{
 
-    width:800px;
+    max-width:760px;
 
 }
 
 .banner h1{
 
-    font-size:60px;
-
+    font-size:58px;
     color:#5578d4;
-
-    margin-bottom:20px;
-
     font-family:'Fredoka',sans-serif;
+    margin-bottom:20px;
+    line-height:65px;
 
 }
 
 .banner p{
 
-    font-size:20px;
-
-    margin-bottom:35px;
-
+    font-size:21px;
     line-height:35px;
+    color:#555;
+    margin-bottom:25px;
 
 }
 
@@ -127,50 +161,44 @@ BANNER
 
     display:inline-block;
 
-    padding:15px 40px;
+    background:#5578d4;
 
-    background:#ff69b4;
+    color:#fff;
 
-    color:white;
-
-    text-decoration:none;
+    padding:16px 40px;
 
     border-radius:50px;
 
-    transition:.4s;
+    text-decoration:none;
 
     font-weight:bold;
+
+    transition:.35s;
 
 }
 
 .btn:hover{
 
-    background:#5578d4;
-
-    transform:scale(1.05);
+    background:#ff69b4;
+    transform:translateY(-5px);
 
 }
 
-/*=========================
+/*============================
 TÍTULO
-==========================*/
+=============================*/
 
 .titulo{
 
     text-align:center;
-
-    padding:70px 20px;
+    padding:50px 20px 20px;
 
 }
 
 .titulo h2{
 
-    font-size:42px;
-
+    font-size:45px;
     color:#ff5ca8;
-
-    margin-bottom:10px;
-
     font-family:'Fredoka';
 
 }
@@ -178,40 +206,44 @@ TÍTULO
 .titulo p{
 
     color:#666;
+    margin-top:12px;
 
 }
 
-/*=========================
+/*============================
 PRODUTOS
-==========================*/
+=============================*/
 
 .produtos{
 
     width:90%;
+    max-width:1300px;
 
-    margin:auto;
+    margin:40px auto 80px;
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-    gap:30px;
-
-    margin-bottom:80px;
+    gap:35px;
 
 }
 
 .card{
 
-    background:#fff;
+    background:white;
 
-    border-radius:20px;
+    border-radius:22px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid #eee;
 
-    transition:.4s;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    animation:subir .8s;
 
 }
 
@@ -219,12 +251,14 @@ PRODUTOS
 
     transform:translateY(-10px);
 
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
 }
 
 .card img{
 
     width:100%;
-    height:250px;
+    height:270px;
     object-fit:cover;
 
 }
@@ -232,17 +266,15 @@ PRODUTOS
 .card h3{
 
     color:#5578d4;
-
-    padding:15px;
-
+    padding:18px;
     font-size:24px;
 
 }
 
 .card p{
 
-    padding:0 15px;
-
+    padding:0 18px;
+    line-height:28px;
     color:#666;
 
 }
@@ -251,11 +283,11 @@ PRODUTOS
 
     display:block;
 
-    padding:20px 15px;
-
-    font-size:22px;
+    padding:20px 18px;
 
     color:#ff5ca8;
+
+    font-size:24px;
 
     font-weight:bold;
 
@@ -267,19 +299,21 @@ PRODUTOS
 
     margin:20px;
 
+    padding:14px;
+
     text-align:center;
 
     text-decoration:none;
 
-    padding:12px;
-
-    border-radius:40px;
+    border-radius:50px;
 
     background:#5578d4;
 
     color:white;
 
-    transition:.4s;
+    font-weight:bold;
+
+    transition:.35s;
 
 }
 
@@ -295,29 +329,38 @@ BENEFÍCIOS
 
 .beneficios{
 
+    width:90%;
+    max-width:1300px;
+
+    margin:0 auto 80px;
+
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:30px;
-
-    padding:80px 10%;
-
-    background:#f8fbff;
 
 }
 
 .beneficios div{
 
-    background:white;
+    background:#fff;
+
+    padding:40px 30px;
 
     border-radius:20px;
 
     text-align:center;
 
-    padding:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+
+}
+
+.beneficios div:hover{
+
+    transform:translateY(-8px);
 
 }
 
@@ -335,6 +378,201 @@ BENEFÍCIOS
 
     color:#5578d4;
 
+    margin-bottom:12px;
+
+}
+
+.beneficios p{
+
+    color:#666;
+
+    line-height:28px;
+
+}
+
+/*=========================
+FORMULÁRIO
+==========================*/
+
+.form-container{
+
+    width:90%;
+    max-width:750px;
+
+    margin:60px auto;
+
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+.form-container h2{
+
+    text-align:center;
+
+    color:#5578d4;
+
+    font-size:38px;
+
+    font-family:'Fredoka',sans-serif;
+
+    margin-bottom:10px;
+
+}
+
+.form-container p{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:35px;
+
+}
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:2px solid #ececec;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:#ff69b4;
+
+    box-shadow:0 0 10px rgba(255,105,180,.2);
+
+}
+
+.form-group textarea{
+
+    resize:none;
+
+}
+
+.btn-enviar{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff69b4;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-enviar:hover{
+
+    background:#5578d4;
+
+}
+
+/*=========================
+TABELA PEDIDOS
+==========================*/
+
+#tabelaPedidos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:30px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+#tabelaPedidos th{
+
+    background:#5578d4;
+
+    color:#fff;
+
+    padding:16px;
+
+}
+
+#tabelaPedidos td{
+
+    padding:16px;
+
+    border-bottom:1px solid #eee;
+
+    text-align:center;
+
+}
+
+#tabelaPedidos tr:nth-child(even){
+
+    background:#fff8fc;
+
+}
+
+#tabelaPedidos tr:hover{
+
+    background:#eef6ff;
+
 }
 
 /*=========================
@@ -345,11 +583,19 @@ footer{
 
     background:#5578d4;
 
-    color:white;
+    color:#fff;
 
     text-align:center;
 
-    padding:30px;
+    padding:35px 20px;
+
+    margin-top:80px;
+
+}
+
+footer p{
+
+    line-height:28px;
 
 }
 
@@ -357,146 +603,122 @@ footer{
 ANIMAÇÃO
 ==========================*/
 
-.card{
-
-animation:subir .8s;
-
-}
-
 @keyframes subir{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:translateY(40px);
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
 
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-#tabelaPedidos{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:30px;
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-#tabelaPedidos th{
-    background:#ff69b4;
-    color:#fff;
-    padding:15px;
-    font-size:15px;
-}
-
-#tabelaPedidos td{
-    padding:15px;
-    text-align:center;
-    border-bottom:1px solid #eee;
-}
-
-#tabelaPedidos tr:nth-child(even){
-    background:#fff5fb;
-}
-
-#tabelaPedidos tr:hover{
-    background:#eaf5ff;
-}
 /*=========================
-FORMULÁRIO
+RESPONSIVO
 ==========================*/
 
-.form-container{
-    width:90%;
-    max-width:700px;
-    margin:70px auto;
-    background:#fff;
-    padding:45px;
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
+
 }
 
-.form-container h2{
-    text-align:center;
-    color:#5578d4;
-    margin-bottom:10px;
-    font-family:'Fredoka',sans-serif;
+nav ul{
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+.banner{
+
+    min-height:420px;
+
+}
+
+.banner h1{
+
     font-size:38px;
+
+    line-height:45px;
+
 }
 
-.form-container p{
-    text-align:center;
-    color:#666;
-    margin-bottom:35px;
+.banner p{
+
+    font-size:18px;
+
+    line-height:30px;
+
 }
 
-.form-group{
-    margin-bottom:22px;
+.titulo h2{
+
+    font-size:34px;
+
 }
 
-.form-group label{
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-    color:#444;
+.form-container{
+
+    padding:30px;
+
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
+}
+
+@media(max-width:600px){
+
+.logo img{
+
+    width:110px;
+
+}
+
+.banner h1{
+
+    font-size:30px;
+
+    line-height:38px;
+
+}
+
+.banner p{
+
+    font-size:16px;
+
+}
+
+.btn{
 
     width:100%;
-    padding:15px;
-    border:2px solid #eee;
-    border-radius:12px;
-    font-size:16px;
-    font-family:'Poppins',sans-serif;
-    transition:.3s;
 
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-
-    outline:none;
-    border-color:#ff69b4;
-    box-shadow:0 0 10px rgba(255,105,180,.25);
-
-}
-
-.form-group textarea{
-    resize:none;
 }
 
 .btn-enviar{
 
-    width:100%;
-    padding:18px;
-    border:none;
-    border-radius:50px;
-    background:#ff69b4;
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
+    font-size:16px;
 
 }
-
-.btn-enviar:hover{
-
-    background:#5578d4;
-    transform:translateY(-3px);
 
 }

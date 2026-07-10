@@ -1,10 +1,10 @@
-// ================================
+// ===============================
 // FORMULÁRIO MINI MODA
-// ================================
+// ===============================
 
 const formulario = document.getElementById("formPedido");
 
-formulario.addEventListener("submit", function (event) {
+formulario.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
@@ -12,46 +12,34 @@ formulario.addEventListener("submit", function (event) {
     const email = document.getElementById("email").value.trim();
     const telefone = document.getElementById("telefone").value.trim();
     const produto = document.getElementById("produto").value;
-    const quantidade = document.getElementById("quantidade").value;
+    const quantidade = Number(document.getElementById("quantidade").value);
     const mensagem = document.getElementById("mensagem").value.trim();
 
-    if (nome === "") {
-        alert("Digite seu nome.");
+    if (!nome || !email || !telefone || !produto || quantidade <= 0) {
+        alert("Preencha todos os campos obrigatórios.");
         return;
     }
 
-    if (email === "") {
-        alert("Digite seu e-mail.");
+    const { error } = await supabase
+        .from("pedidos")
+        .insert([
+            {
+                nome,
+                email,
+                telefone,
+                produto,
+                quantidade,
+                mensagem
+            }
+        ]);
+
+    if (error) {
+        console.error(error);
+        alert("Erro ao salvar o pedido.");
         return;
     }
 
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailValido.test(email)) {
-        alert("Digite um e-mail válido.");
-        return;
-    }
-
-    if (telefone === "") {
-        alert("Digite seu telefone.");
-        return;
-    }
-
-    if (quantidade === "" || Number(quantidade) <= 0) {
-        alert("Informe uma quantidade válida.");
-        return;
-    }
-
-    alert("Solicitação enviada com sucesso!");
-
-    console.log({
-        nome,
-        email,
-        telefone,
-        produto,
-        quantidade,
-        mensagem
-    });
+    alert("Pedido enviado com sucesso!");
 
     formulario.reset();
 

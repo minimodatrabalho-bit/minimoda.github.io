@@ -1,6 +1,8 @@
-/* ===========================
+/* ==========================================
    MINI MODA
-=========================== */
+   Desenvolvido por:
+   Hortência • Jéssica • Riquelme
+========================================== */
 
 *{
     margin:0;
@@ -14,399 +16,219 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#fafcff;
+    background:#fafafa;
     color:#444;
     overflow-x:hidden;
 }
 
-/* ===========================
+/*==========================================
 HEADER
-=========================== */
+==========================================*/
 
 header{
-
     width:100%;
-    height:90px;
-
+    height:80px;
     background:#fff;
-
     display:flex;
-    justify-content:flex-end;
+    justify-content:space-between;
     align-items:center;
-
     padding:0 7%;
-
     position:sticky;
     top:0;
-
-    position:relative;
-
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
-
     z-index:999;
-
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .logo{
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    z-index:1000;
-
+    display:flex;
+    align-items:center;
 }
 
 .logo img{
+    width:125px;
+    transition:.3s;
+}
 
-    width:170px;
-    height:auto;
-    display:block;
-
+.logo img:hover{
+    transform:scale(1.05);
 }
 
 nav ul{
-
     display:flex;
     gap:35px;
     list-style:none;
-
 }
 
-nav ul li{
-
+nav li{
     position:relative;
-
 }
 
 nav a{
-
     text-decoration:none;
     color:#5578d4;
     font-weight:600;
     transition:.3s;
-
-}
-
-nav a:hover{
-
-    color:#ff5ca8;
-
 }
 
 nav a::after{
-
     content:"";
-
     position:absolute;
-
     left:0;
-    bottom:-8px;
-
-    width:0%;
+    bottom:-6px;
+    width:0;
     height:3px;
-
     background:#ff69b4;
-
     transition:.3s;
-
 }
 
 nav a:hover::after{
-
     width:100%;
-
 }
 
-/* ===========================
+nav a:hover{
+    color:#ff69b4;
+}
+
+/*==========================================
 BANNER
-=========================== */
+==========================================*/
 
 .banner{
-
     position:relative;
-
     overflow:hidden;
 
-    min-height:620px;
+    min-height:430px;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 
-    background:
-    radial-gradient(circle at left,#ffd8ef 0,#ffeef8 25%,transparent 40%),
-    radial-gradient(circle at right,#d9eeff 0,#eef8ff 25%,transparent 40%),
-    linear-gradient(135deg,#ffe8f4,#ffffff,#e7f4ff);
+    padding:40px 20px;
 
+    background:linear-gradient(135deg,#ffeaf6,#ffffff,#e9f4ff);
 }
-
-/* ALGODÕES DOCES */
-
-.banner::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-30px;
-    bottom:-10px;
-
-    width:260px;
-    height:420px;
-
-    background:url("https://pngimg.com/d/cotton_candy_PNG54.png");
-
-    background-size:contain;
-    background-repeat:no-repeat;
-
-}
-
-.banner::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:-30px;
-    bottom:-10px;
-
-    width:260px;
-    height:420px;
-
-    background:url("https://pngimg.com/d/cotton_candy_PNG54.png");
-
-    background-size:contain;
-    background-repeat:no-repeat;
-
-    transform:scaleX(-1);
-
-}
-
-/* Bolinhas */
-
-.banner .bolinha{
-
-    position:absolute;
-    border-radius:50%;
-    opacity:.7;
-
-}
-
-.b1{
-
-    width:14px;
-    height:14px;
-    background:#ffc94d;
-
-    left:20%;
-    top:120px;
-
-}
-
-.b2{
-
-    width:12px;
-    height:12px;
-    background:#79d3ff;
-
-    right:22%;
-    top:150px;
-
-}
-
-.b3{
-
-    width:16px;
-    height:16px;
-    background:#ff90c5;
-
-    left:28%;
-    bottom:140px;
-
-}
-
-.b4{
-
-    width:12px;
-    height:12px;
-    background:#8ecbff;
-
-    right:28%;
-    bottom:180px;
-
-}
-
-.b5{
-
-    width:10px;
-    height:10px;
-    background:#c999ff;
-
-    left:55%;
-    top:220px;
-
-}
-
-/* Corações */
-
-.banner .heart{
-
-    position:absolute;
-
-    color:#ff8dbd;
-
-    font-size:28px;
-
-}
-
-.h1{
-
-    left:18%;
-    top:90px;
-
-}
-
-.h2{
-
-    right:18%;
-    top:120px;
-
-}
-
-.h3{
-
-    left:30%;
-    bottom:90px;
-
-}
-
-.h4{
-
-    right:30%;
-    bottom:120px;
-
-}
-
-/* Texto */
 
 .banner-texto{
-
-    position:relative;
-
-    z-index:5;
-
     max-width:760px;
-
+    position:relative;
+    z-index:5;
 }
 
 .banner h1{
-
-    font-size:70px;
-
-    line-height:1.1;
-
+    font-size:56px;
     color:#5578d4;
-
     font-family:'Fredoka',sans-serif;
-
-    margin-bottom:25px;
-
+    margin-bottom:20px;
+    line-height:65px;
 }
 
 .banner p{
-
-    font-size:24px;
-
-    line-height:40px;
-
+    font-size:20px;
     color:#555;
+    line-height:34px;
+    margin-bottom:30px;
+}
 
-    margin-bottom:35px;
+/*==========================================
+ALGODÕES DOCES
+==========================================*/
+
+.algodao-esquerdo,
+.algodao-direito{
+    position:absolute;
+    width:180px;
+    opacity:.95;
+    animation:flutuar 4s ease-in-out infinite;
+    pointer-events:none;
+}
+
+.algodao-esquerdo{
+    left:40px;
+    bottom:40px;
+}
+
+.algodao-direito{
+    right:40px;
+    top:50px;
+}
+
+@keyframes flutuar{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
 
 }
 
+/*==========================================
+BOTÃO
+==========================================*/
+
 .btn{
-
     display:inline-block;
-
-    padding:18px 48px;
-
+    padding:16px 42px;
     background:#5578d4;
-
     color:#fff;
-
     text-decoration:none;
-
-    border-radius:60px;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    transition:.35s;
-
-    box-shadow:0 12px 25px rgba(0,0,0,.15);
-
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
 }
 
 .btn:hover{
-
-    background:#ff5ca8;
-
+    background:#ff69b4;
     transform:translateY(-4px);
-
 }
 
-/* ===========================
-TÍTULO
-=========================== */
+/*==========================================
+TÍTULOS
+==========================================*/
 
 .titulo{
-
+    width:80%;
+    max-width:900px;
+    margin:55px auto 35px;
     text-align:center;
-
-    padding:70px 20px 15px;
-
 }
 
 .titulo h2{
-
-    font-size:52px;
-
     color:#ff5ca8;
-
+    font-size:42px;
     font-family:'Fredoka',sans-serif;
-
+    margin-bottom:10px;
 }
 
 .titulo p{
-
-    margin-top:15px;
-
     color:#666;
-
-    font-size:20px;
-
+    line-height:30px;
+    font-size:18px;
 }
-/*=========================
+/*==========================================
 PRODUTOS
-==========================*/
+==========================================*/
 
 .produtos{
 
-    width:90%;
-    max-width:1400px;
-    margin:50px auto 90px;
+    width:82%;
+    max-width:1150px;
+
+    margin:40px auto 70px;
 
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:35px;
+
+    gap:30px;
 
 }
 
@@ -418,7 +240,9 @@ PRODUTOS
 
     overflow:hidden;
 
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    border:1px solid #ececec;
+
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
 
     transition:.35s;
 
@@ -428,46 +252,51 @@ PRODUTOS
 
 .card:hover{
 
-    transform:translateY(-12px);
+    transform:translateY(-10px);
 
-    box-shadow:0 20px 40px rgba(0,0,0,.18);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
 
 }
 
 .card img{
 
     width:100%;
-    height:270px;
+    height:250px;
     object-fit:cover;
-
-}
-
-.estrelas{
-
-    color:#FFD700;
-    font-size:18px;
-    letter-spacing:2px;
-    text-align:center;
-    margin-top:18px;
 
 }
 
 .card h3{
 
     color:#5578d4;
-    text-align:center;
-    margin-top:10px;
-    font-size:27px;
+
+    padding:18px 18px 10px;
+
+    font-size:24px;
 
 }
 
 .card p{
 
-    text-align:center;
-    padding:12px 20px;
+    padding:0 18px;
+
     color:#666;
-    min-height:70px;
+
     line-height:28px;
+
+    min-height:60px;
+
+}
+
+.estrelas{
+
+    color:#FFD700;
+
+    font-size:20px;
+
+    margin:12px 18px;
+
+    letter-spacing:3px;
 
 }
 
@@ -475,15 +304,13 @@ PRODUTOS
 
     display:block;
 
-    text-align:center;
+    padding:8px 18px 18px;
+
+    font-size:24px;
 
     color:#ff5ca8;
 
-    font-size:28px;
-
     font-weight:bold;
-
-    margin-bottom:20px;
 
 }
 
@@ -491,17 +318,15 @@ PRODUTOS
 
     display:block;
 
-    width:85%;
+    margin:0 18px 20px;
 
-    margin:0 auto 25px;
-
-    padding:15px;
-
-    border-radius:40px;
+    padding:14px;
 
     text-align:center;
 
     text-decoration:none;
+
+    border-radius:50px;
 
     background:#5578d4;
 
@@ -509,30 +334,31 @@ PRODUTOS
 
     font-weight:bold;
 
-    transition:.35s;
+    transition:.3s;
 
 }
 
 .card a:hover{
 
-    background:#ff5ca8;
+    background:#ff69b4;
+
+    transform:scale(1.02);
 
 }
-
-/*=========================
+/*==========================================
 BENEFÍCIOS
-==========================*/
+==========================================*/
 
 .beneficios{
 
-    width:90%;
-    max-width:1300px;
+    width:82%;
+    max-width:1150px;
 
-    margin:40px auto 90px;
+    margin:40px auto 70px;
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:30px;
 
@@ -542,27 +368,27 @@ BENEFÍCIOS
 
     background:#fff;
 
-    padding:45px;
+    padding:35px 25px;
 
-    border-radius:25px;
+    border-radius:20px;
 
     text-align:center;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 
-    transition:.35s;
+    transition:.3s;
 
 }
 
 .beneficios div:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 
 }
 
 .beneficios i{
 
-    font-size:60px;
+    font-size:55px;
 
     color:#ff69b4;
 
@@ -574,7 +400,7 @@ BENEFÍCIOS
 
     color:#5578d4;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 
 }
 
@@ -586,24 +412,25 @@ BENEFÍCIOS
 
 }
 
-/*=========================
+
+/*==========================================
 FORMULÁRIO
-==========================*/
+==========================================*/
 
 .form-container{
 
-    width:92%;
-    max-width:760px;
+    width:80%;
+    max-width:700px;
 
-    margin:70px auto;
+    margin:60px auto;
 
     background:#fff;
 
-    padding:45px;
+    padding:40px;
 
     border-radius:25px;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
 
@@ -613,9 +440,11 @@ FORMULÁRIO
 
     color:#5578d4;
 
-    font-size:42px;
+    font-size:38px;
 
     font-family:'Fredoka',sans-serif;
+
+    margin-bottom:10px;
 
 }
 
@@ -623,15 +452,15 @@ FORMULÁRIO
 
     text-align:center;
 
-    color:#777;
+    color:#666;
 
-    margin:15px 0 35px;
+    margin-bottom:30px;
 
 }
 
 .form-group{
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
 }
 
@@ -651,13 +480,15 @@ FORMULÁRIO
 
     width:100%;
 
-    padding:16px;
+    padding:15px;
 
     border:2px solid #ececec;
 
     border-radius:12px;
 
     font-size:16px;
+
+    font-family:'Poppins',sans-serif;
 
     transition:.3s;
 
@@ -671,7 +502,7 @@ FORMULÁRIO
 
     border-color:#ff69b4;
 
-    box-shadow:0 0 10px rgba(255,105,180,.2);
+    box-shadow:0 0 10px rgba(255,105,180,.25);
 
 }
 
@@ -685,7 +516,7 @@ FORMULÁRIO
 
     width:100%;
 
-    padding:18px;
+    padding:16px;
 
     border:none;
 
@@ -701,7 +532,7 @@ FORMULÁRIO
 
     cursor:pointer;
 
-    transition:.35s;
+    transition:.3s;
 
 }
 
@@ -711,17 +542,18 @@ FORMULÁRIO
 
 }
 
-/*=========================
-TABELA
-==========================*/
+
+/*==========================================
+TABELA DE PEDIDOS
+==========================================*/
 
 #tabelaPedidos{
 
-    width:95%;
+    width:82%;
 
-    max-width:1400px;
+    max-width:950px;
 
-    margin:50px auto;
+    margin:40px auto;
 
     border-collapse:collapse;
 
@@ -731,7 +563,7 @@ TABELA
 
     background:#fff;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
 
@@ -741,23 +573,23 @@ TABELA
 
     color:#fff;
 
-    padding:18px;
+    padding:16px;
 
 }
 
 #tabelaPedidos td{
 
-    padding:18px;
-
-    border-bottom:1px solid #eee;
+    padding:15px;
 
     text-align:center;
+
+    border-bottom:1px solid #eee;
 
 }
 
 #tabelaPedidos tr:nth-child(even){
 
-    background:#fff7fc;
+    background:#fff8fc;
 
 }
 
@@ -767,9 +599,10 @@ TABELA
 
 }
 
-/*=========================
+
+/*==========================================
 FOOTER
-==========================*/
+==========================================*/
 
 footer{
 
@@ -779,9 +612,9 @@ footer{
 
     text-align:center;
 
-    padding:40px;
+    padding:30px 20px;
 
-    margin-top:80px;
+    margin-top:60px;
 
 }
 
@@ -791,78 +624,107 @@ footer p{
 
 }
 
-/*=========================
+
+/*==========================================
 ANIMAÇÃO
-==========================*/
+==========================================*/
 
 @keyframes subir{
 
-from{
+    from{
 
-opacity:0;
-transform:translateY(40px);
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
 
-to{
 
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-/*=========================
+/*==========================================
 RESPONSIVO
-==========================*/
+==========================================*/
 
 @media(max-width:900px){
 
 header{
 
-flex-direction:column;
-height:auto;
-padding:20px;
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
 
 }
 
 nav ul{
 
-margin-top:20px;
-flex-wrap:wrap;
-justify-content:center;
-gap:18px;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:18px;
 
 }
 
 .banner{
 
-min-height:520px;
+    min-height:380px;
 
 }
 
 .banner h1{
 
-font-size:44px;
+    font-size:38px;
+
+    line-height:45px;
 
 }
 
 .banner p{
 
-font-size:18px;
+    font-size:18px;
 
 }
 
-.titulo h2{
+.algodao-esquerdo,
+.algodao-direito{
 
-font-size:38px;
+    width:120px;
 
 }
 
 .form-container{
 
-padding:30px;
+    width:92%;
+
+    padding:30px;
+
+}
+
+.produtos,
+.beneficios{
+
+    width:92%;
+
+}
+
+#tabelaPedidos{
+
+    width:95%;
+
+    font-size:14px;
 
 }
 
@@ -872,369 +734,202 @@ padding:30px;
 
 .logo img{
 
-width:110px;
+    width:100px;
+
+}
+
+.banner{
+
+    min-height:320px;
 
 }
 
 .banner h1{
 
-font-size:34px;
-line-height:42px;
+    font-size:30px;
+
+    line-height:36px;
 
 }
 
 .banner p{
 
-font-size:16px;
-line-height:28px;
+    font-size:16px;
+
+}
+
+.algodao-esquerdo{
+
+    width:80px;
+
+    left:10px;
+
+}
+
+.algodao-direito{
+
+    width:80px;
+
+    right:10px;
 
 }
 
 .btn{
 
-width:100%;
+    width:100%;
 
 }
 
-.produtos{
+.btn-enviar{
 
-grid-template-columns:1fr;
-
-}
-
-.beneficios{
-
-grid-template-columns:1fr;
+    font-size:16px;
 
 }
 
 }
-/*==================================================
-DECORAÇÃO PREMIUM DO BANNER
-==================================================*/
+/*==========================================
+EFEITOS EXTRAS - MINI MODA
+==========================================*/
 
-.banner{
+/* Barra rosa em cima dos cards */
+
+.card{
     position:relative;
-    overflow:hidden;
 }
 
-.decoracao{
+.card::before{
+    content:"";
     position:absolute;
-    inset:0;
-    pointer-events:none;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:linear-gradient(90deg,#ff69b4,#ffb6d9);
 }
 
-/* ALGODÃO DOCE ESQUERDO */
+/* Barra azul nos benefícios */
 
-.algodao{
+.beneficios div{
+    position:relative;
+}
+
+.beneficios div::before{
+    content:"";
     position:absolute;
-    bottom:25px;
-    width:170px;
-    height:260px;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:#5578d4;
+    border-radius:20px 20px 0 0;
 }
 
-.esquerda{
-    left:40px;
+/* Hover dos botões */
+
+.btn,
+.btn-enviar,
+.card a{
+
+    transition:.35s;
+
 }
 
-.direita{
-    right:40px;
+.btn:hover,
+.btn-enviar:hover,
+.card a:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
 }
 
-/* Nuvens do algodão */
+/* Imagens dos produtos */
 
-.algodao::before{
+.card img{
+
+    transition:.45s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+/* Campos do formulário */
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover{
+
+    border-color:#ff69b4;
+
+}
+
+/* Linha rosa embaixo dos títulos */
+
+.titulo h2{
+
+    display:inline-block;
+    position:relative;
+
+}
+
+.titulo h2::after{
 
     content:"";
 
-    position:absolute;
+    width:70px;
+    height:4px;
 
-    width:90px;
-    height:90px;
-
-    background:#ffd0e7;
-
-    border-radius:50%;
-
-    top:10px;
-    left:35px;
-
-    box-shadow:
-    -45px 35px #ffe2f0,
-    45px 35px #ffc5e2,
-    -15px -15px #fff0f8,
-    18px -25px #ffd9ec,
-    0 60px #ffd0e7,
-    -30px 70px #ffe8f5,
-    35px 70px #ffd3ea;
-
-}
-
-/* Palito */
-
-.algodao::after{
-
-    content:"";
+    background:#ff69b4;
 
     position:absolute;
 
-    width:7px;
-    height:110px;
+    left:50%;
+    transform:translateX(-50%);
 
-    background:#b88955;
+    bottom:-10px;
 
-    border-radius:20px;
-
-    left:82px;
-    top:135px;
+    border-radius:50px;
 
 }
 
-/* ALGODÃO DOCE AZUL */
+/* Seleção de texto */
 
-.direita::before{
+::selection{
 
-    background:#bfe6ff;
-
-    box-shadow:
-    -45px 35px #d9f1ff,
-    45px 35px #b7e2ff,
-    -15px -15px #f2fbff,
-    18px -25px #d5efff,
-    0 60px #bfe6ff,
-    -30px 70px #d9f1ff,
-    35px 70px #b7e2ff;
+    background:#ff69b4;
+    color:#fff;
 
 }
 
-/* CORAÇÕES */
+/* Scroll personalizado */
 
-.heart{
-
-    position:absolute;
-
-    color:#ff72b2;
-
-    font-size:30px;
-
-    animation:flutuar 4s infinite;
-
-}
-
-.h1{
-left:18%;
-top:100px;
-}
-
-.h2{
-right:18%;
-top:150px;
-}
-
-.h3{
-left:30%;
-bottom:120px;
-}
-
-.h4{
-right:30%;
-bottom:140px;
-}
-
-/* BOLINHAS */
-
-.dot{
-
-    position:absolute;
-
-    border-radius:50%;
-
-}
-
-.d1{
-
-    width:14px;
-    height:14px;
-
-    background:#ffd84e;
-
-    left:26%;
-    top:180px;
-
-}
-
-.d2{
-
-    width:14px;
-    height:14px;
-
-    background:#79d2ff;
-
-    right:24%;
-    top:220px;
-
-}
-
-.d3{
-
-    width:16px;
-    height:16px;
-
-    background:#ff8dc5;
-
-    left:38%;
-    bottom:160px;
-
-}
-
-.d4{
-
-    width:12px;
-    height:12px;
-
-    background:#87d4ff;
-
-    right:38%;
-    bottom:170px;
-
-}
-
-.d5{
+::-webkit-scrollbar{
 
     width:10px;
-    height:10px;
-
-    background:#d5a3ff;
-
-    left:55%;
-    top:240px;
 
 }
 
-/* BRILHOS */
+::-webkit-scrollbar-track{
 
-.banner::before{
-
-    content:"✨";
-
-    position:absolute;
-
-    font-size:30px;
-
-    left:12%;
-    top:80px;
-
-    animation:flutuar 5s infinite;
+    background:#f4f4f4;
 
 }
 
-.banner::after{
+::-webkit-scrollbar-thumb{
 
-    content:"✨";
+    background:#ff69b4;
 
-    position:absolute;
-
-    font-size:25px;
-
-    right:12%;
-    bottom:120px;
-
-    animation:flutuar 6s infinite;
+    border-radius:30px;
 
 }
 
-/* ANIMAÇÃO */
+::-webkit-scrollbar-thumb:hover{
 
-@keyframes flutuar{
+    background:#5578d4;
 
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-/* ==========================
-LOGO CENTRALIZADA SOBRE O BANNER
-========================== */
-
-header{
-    position: relative;
-}
-
-.logo{
-    position: absolute;
-    left: 50%;
-    top: 5px;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
-.logo img{
-    width: 150px;
-    height: auto;
-}
-
-/* desce o banner para a logo não ficar em cima do título */
-.banner{
-    padding-top: 120px;
-}
-.banner{
-    position: relative;
-    overflow: hidden;
-}
-
-.algodao-esquerdo{
-    position: absolute;
-    left: 30px;
-    bottom: 20px;
-    width: 130px;
-    z-index: 1;
-}
-
-.algodao-direito{
-    position: absolute;
-    right: 30px;
-    bottom: 20px;
-    width: 130px;
-    z-index: 1;
-}
-
-.banner-texto{
-    position: relative;
-    z-index: 2;
-}
-/* ALGODÕES DOCES */
-
-.banner{
-    position:relative;
-    overflow:hidden;
-}
-
-.algodao-esquerdo{
-    position:absolute;
-    left:25px;
-    bottom:15px;
-    width:150px;
-    z-index:1;
-}
-
-.algodao-direito{
-    position:absolute;
-    right:25px;
-    bottom:15px;
-    width:150px;
-    transform:scaleX(-1);
-    z-index:1;
-}
-
-.banner-texto{
-    position:relative;
-    z-index:2;
 }

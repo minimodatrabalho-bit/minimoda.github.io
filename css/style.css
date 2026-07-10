@@ -35,14 +35,17 @@ header{
     box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
-.logo{
+.logo {
     position: absolute;
+    top: 15px;          /* aumenta a distância do topo */
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000;
 }
 
-.logo img{
-    width: 120px;
+.logo img {
+    width: 110px;
+    height: auto;
 }
 
 nav{

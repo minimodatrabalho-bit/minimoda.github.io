@@ -110,23 +110,24 @@ BANNER
 ALGODÕES DOCES
 ==========================================*/
 
-.algodao-esquerdo,
-.algodao-direito{
+.algodao-esquerdo{
     position:absolute;
-    width:180px;
-    opacity:.95;
+    width:170px;
+    left:80px;
+    top:90px;
     animation:flutuar 4s ease-in-out infinite;
+    z-index:2;
     pointer-events:none;
 }
 
-.algodao-esquerdo{
-    left:40px;
-    bottom:40px;
-}
-
 .algodao-direito{
-    right:40px;
-    top:50px;
+    position:absolute;
+    width:170px;
+    right:80px;
+    top:90px;
+    animation:flutuar 4s ease-in-out infinite;
+    z-index:2;
+    pointer-events:none;
 }
 
 @keyframes flutuar{
@@ -144,7 +145,6 @@ ALGODÕES DOCES
     }
 
 }
-
 /*==========================================
 BOTÃO
 ==========================================*/

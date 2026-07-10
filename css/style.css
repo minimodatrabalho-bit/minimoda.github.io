@@ -904,3 +904,254 @@ grid-template-columns:1fr;
 }
 
 }
+/*==================================================
+DECORAÇÃO PREMIUM DO BANNER
+==================================================*/
+
+.banner{
+    position:relative;
+    overflow:hidden;
+}
+
+.decoracao{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+/* ALGODÃO DOCE ESQUERDO */
+
+.algodao{
+    position:absolute;
+    bottom:25px;
+    width:170px;
+    height:260px;
+}
+
+.esquerda{
+    left:40px;
+}
+
+.direita{
+    right:40px;
+}
+
+/* Nuvens do algodão */
+
+.algodao::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    background:#ffd0e7;
+
+    border-radius:50%;
+
+    top:10px;
+    left:35px;
+
+    box-shadow:
+    -45px 35px #ffe2f0,
+    45px 35px #ffc5e2,
+    -15px -15px #fff0f8,
+    18px -25px #ffd9ec,
+    0 60px #ffd0e7,
+    -30px 70px #ffe8f5,
+    35px 70px #ffd3ea;
+
+}
+
+/* Palito */
+
+.algodao::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+    height:110px;
+
+    background:#b88955;
+
+    border-radius:20px;
+
+    left:82px;
+    top:135px;
+
+}
+
+/* ALGODÃO DOCE AZUL */
+
+.direita::before{
+
+    background:#bfe6ff;
+
+    box-shadow:
+    -45px 35px #d9f1ff,
+    45px 35px #b7e2ff,
+    -15px -15px #f2fbff,
+    18px -25px #d5efff,
+    0 60px #bfe6ff,
+    -30px 70px #d9f1ff,
+    35px 70px #b7e2ff;
+
+}
+
+/* CORAÇÕES */
+
+.heart{
+
+    position:absolute;
+
+    color:#ff72b2;
+
+    font-size:30px;
+
+    animation:flutuar 4s infinite;
+
+}
+
+.h1{
+left:18%;
+top:100px;
+}
+
+.h2{
+right:18%;
+top:150px;
+}
+
+.h3{
+left:30%;
+bottom:120px;
+}
+
+.h4{
+right:30%;
+bottom:140px;
+}
+
+/* BOLINHAS */
+
+.dot{
+
+    position:absolute;
+
+    border-radius:50%;
+
+}
+
+.d1{
+
+    width:14px;
+    height:14px;
+
+    background:#ffd84e;
+
+    left:26%;
+    top:180px;
+
+}
+
+.d2{
+
+    width:14px;
+    height:14px;
+
+    background:#79d2ff;
+
+    right:24%;
+    top:220px;
+
+}
+
+.d3{
+
+    width:16px;
+    height:16px;
+
+    background:#ff8dc5;
+
+    left:38%;
+    bottom:160px;
+
+}
+
+.d4{
+
+    width:12px;
+    height:12px;
+
+    background:#87d4ff;
+
+    right:38%;
+    bottom:170px;
+
+}
+
+.d5{
+
+    width:10px;
+    height:10px;
+
+    background:#d5a3ff;
+
+    left:55%;
+    top:240px;
+
+}
+
+/* BRILHOS */
+
+.banner::before{
+
+    content:"✨";
+
+    position:absolute;
+
+    font-size:30px;
+
+    left:12%;
+    top:80px;
+
+    animation:flutuar 5s infinite;
+
+}
+
+.banner::after{
+
+    content:"✨";
+
+    position:absolute;
+
+    font-size:25px;
+
+    right:12%;
+    bottom:120px;
+
+    animation:flutuar 6s infinite;
+
+}
+
+/* ANIMAÇÃO */
+
+@keyframes flutuar{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}

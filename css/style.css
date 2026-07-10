@@ -412,3 +412,91 @@ transform:translateY(0);
 #tabelaPedidos tr:hover{
     background:#eaf5ff;
 }
+/*=========================
+FORMULÁRIO
+==========================*/
+
+.form-container{
+    width:90%;
+    max-width:700px;
+    margin:70px auto;
+    background:#fff;
+    padding:45px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.form-container h2{
+    text-align:center;
+    color:#5578d4;
+    margin-bottom:10px;
+    font-family:'Fredoka',sans-serif;
+    font-size:38px;
+}
+
+.form-container p{
+    text-align:center;
+    color:#666;
+    margin-bottom:35px;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+    padding:15px;
+    border:2px solid #eee;
+    border-radius:12px;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    outline:none;
+    border-color:#ff69b4;
+    box-shadow:0 0 10px rgba(255,105,180,.25);
+
+}
+
+.form-group textarea{
+    resize:none;
+}
+
+.btn-enviar{
+
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:50px;
+    background:#ff69b4;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.btn-enviar:hover{
+
+    background:#5578d4;
+    transform:translateY(-3px);
+
+}

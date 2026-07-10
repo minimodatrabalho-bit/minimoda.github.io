@@ -1160,3 +1160,28 @@ transform:translateY(0);
 }
 
 }
+/* ==========================
+LOGO CENTRALIZADA SOBRE O BANNER
+========================== */
+
+header{
+    position: relative;
+}
+
+.logo{
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.logo img{
+    width: 150px;
+    height: auto;
+}
+
+/* desce o banner para a logo não ficar em cima do título */
+.banner{
+    padding-top: 120px;
+}

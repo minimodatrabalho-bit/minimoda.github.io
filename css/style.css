@@ -1210,3 +1210,31 @@ header{
     position: relative;
     z-index: 2;
 }
+/* ALGODÕES DOCES */
+
+.banner{
+    position:relative;
+    overflow:hidden;
+}
+
+.algodao-esquerdo{
+    position:absolute;
+    left:25px;
+    bottom:15px;
+    width:150px;
+    z-index:1;
+}
+
+.algodao-direito{
+    position:absolute;
+    right:25px;
+    bottom:15px;
+    width:150px;
+    transform:scaleX(-1);
+    z-index:1;
+}
+
+.banner-texto{
+    position:relative;
+    z-index:2;
+}

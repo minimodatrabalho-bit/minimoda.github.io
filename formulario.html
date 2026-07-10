@@ -24,7 +24,6 @@
     </div>
 
     <nav>
-
         <ul>
             <li><a href="index.html">Início</a></li>
             <li><a href="sobre.html">Sobre</a></li>
@@ -32,7 +31,6 @@
             <li><a href="formulario.html">Solicitar</a></li>
             <li><a href="pedidos.html">Pedidos</a></li>
         </ul>
-
     </nav>
 
 </header>
@@ -44,9 +42,7 @@
         <h1>Solicitação de Produto</h1>
 
         <p>
-
             Preencha o formulário abaixo para solicitar um orçamento.
-
         </p>
 
     </div>
@@ -55,103 +51,72 @@
 
 <section class="form-container">
 
-<h2>Solicite seu Produto</h2>
+    <h2>Solicite seu Produto</h2>
 
-<p>
-Preencha os dados abaixo e enviaremos seu pedido.
-</p>
+    <p>
+        Preencha os dados abaixo e enviaremos seu pedido.
+    </p>
 
-<form id="formPedido">
+    <form id="formPedido">
 
-<div class="form-group">
-<label>Nome Completo</label>
-<input type="text" id="nome" placeholder="Digite seu nome" required>
-</div>
+        <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+        </div>
 
-<div class="form-group">
-<label>E-mail</label>
-<input type="email" id="email" placeholder="Digite seu e-mail" required>
-</div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+        </div>
 
-<div class="form-group">
-<label>Telefone</label>
-<input type="text" id="telefone" placeholder="(00) 00000-0000" required>
-</div>
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" placeholder="(00) 00000-0000" required>
+        </div>
 
-<div class="form-group">
-<label>Produto de Interesse</label>
+        <div class="form-group">
+            <label for="produto">Produto de Interesse</label>
 
-<select id="produto">
+            <select id="produto">
+                <option>Vestido Infantil</option>
+                <option>Tênis Infantil</option>
+                <option>Conjunto Infantil</option>
+                <option>Body Bebê</option>
+                <option>Sandália Infantil</option>
+                <option>Jaqueta Infantil</option>
+            </select>
 
-<option>Vestido Infantil</option>
-<option>Tênis Infantil</option>
-<option>Conjunto Infantil</option>
-<option>Body Bebê</option>
-<option>Sandália Infantil</option>
-<option>Jaqueta Infantil</option>
+        </div>
 
-</select>
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" min="1" required>
+        </div>
 
-</div>
+        <div class="form-group">
+            <label for="mensagem">Mensagem</label>
 
-<div class="form-group">
-<label>Quantidade</label>
-<input type="number" id="quantidade" min="1" required>
-</div>
+            <textarea
+                id="mensagem"
+                rows="5"
+                placeholder="Escreva uma observação..."></textarea>
 
-<div class="form-group">
-<label>Mensagem</label>
+        </div>
 
-<textarea
-id="mensagem"
-rows="5"
-placeholder="Escreva uma observação..."></textarea>
+        <button type="submit" class="btn-enviar">
+            Enviar Solicitação
+        </button>
 
-</div>
-
-<button type="submit" class="btn-enviar">
-Enviar Solicitação
-</button>
-
-</form>
-
-</section>
-
-<br><br>
-
-<label>Quantidade</label>
-
-<input
-type="number"
-id="quantidade"
-min="1"
-required>
-
-<br><br>
-
-<label>Mensagem</label>
-
-<textarea
-id="mensagem"
-rows="6"
-placeholder="Escreva uma observação..."></textarea>
-
-<br><br>
-
-<button class="btn" type="submit">
-
-Enviar Solicitação
-
-</button>
-
-</form>
+    </form>
 
 </section>
 
 <footer>
+    <p>© 2025 Mini Moda - Todos os direitos reservados.</p>
+</footer>
 
-<p>
 <script src="js/formulario.js"></script>
 
 </body>
+
 </html>

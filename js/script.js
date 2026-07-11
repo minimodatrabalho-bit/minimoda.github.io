@@ -7,43 +7,6 @@
 console.log("Mini Moda carregado com sucesso!");
 
 // ===============================
-// CLIENTE LOGADO
-// ===============================
-
-const cliente = JSON.parse(localStorage.getItem("cliente"));
-
-if (cliente) {
-
-    const btnLogin = document.querySelector(".btn-login");
-
-    if (btnLogin) {
-
-        btnLogin.innerHTML = `
-            <i class="fa-solid fa-user"></i>
-            Olá, ${cliente.nome.split(" ")[0]}
-        `;
-
-        btnLogin.href = "#";
-
-        btnLogin.addEventListener("click", (e) => {
-
-            e.preventDefault();
-
-            if (confirm("Deseja sair da conta?")) {
-
-                localStorage.removeItem("cliente");
-
-                window.location.href = "cliente-login.html";
-
-            }
-
-        });
-
-    }
-
-}
-
-// ===============================
 // Efeito dos cards
 // ===============================
 
@@ -158,47 +121,3 @@ if (footer) {
         `© ${new Date().getFullYear()} Mini Moda - Todos os direitos reservados.`;
 
 }
-// ===============================
-// Verifica se existe cliente logado
-// ===============================
-
-console.log("Cliente salvo:", localStorage.getItem("cliente"));
-
-const cliente = JSON.parse(localStorage.getItem("cliente"));
-const usuario = document.getElementById("usuarioLogado");
-
-if (usuario) {
-
-    if (cliente) {
-
-        usuario.innerHTML = `
-            <span>
-                <i class="fa-solid fa-user"></i>
-                Olá, <strong>${cliente.nome}</strong>
-            </span>
-
-            <a href="#" id="sair">Sair</a>
-        `;
-
-    } else {
-
-        usuario.innerHTML = `
-            <a href="cliente-login.html" class="btn-login">
-                Entrar
-            </a>
-        `;
-
-    }
-
-}
-
-document.addEventListener("click", function (e) {
-
-    if (e.target.id === "sair") {
-
-        localStorage.removeItem("cliente");
-        window.location.href = "cliente-login.html";
-
-    }
-
-});

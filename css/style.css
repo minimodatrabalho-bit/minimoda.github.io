@@ -1018,3 +1018,59 @@ EFEITOS EXTRAS - MINI MODA
     transform:translateY(-8px);
     box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
+/*==========================================
+LOGIN
+==========================================*/
+
+.login{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(90deg,#ffe4ef,#eef7ff);
+}
+
+.login-box{
+    width:420px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.login-box img{
+    width:120px;
+    margin-bottom:20px;
+}
+
+.login-box h1{
+    color:#ff5fa9;
+    margin-bottom:10px;
+    font-family:'Fredoka',sans-serif;
+}
+
+.login-box p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.btn-login{
+    display:block;
+    text-decoration:none;
+    background:#4f6fd8;
+    color:#fff;
+    padding:15px;
+    margin:15px 0;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-login:hover{
+    background:#ff5fa9;
+}
+
+.btn-login i{
+    margin-right:8px;
+}

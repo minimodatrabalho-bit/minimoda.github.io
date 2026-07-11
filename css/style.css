@@ -1086,3 +1086,44 @@ LOGIN
     background:#4f73d9;
     transform:translateY(-2px);
 }
+/* ===========================
+   Usuário Logado
+=========================== */
+
+#usuarioLogado{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-left:25px;
+    font-family:'Poppins',sans-serif;
+}
+
+#usuarioLogado span{
+    background:#fff;
+    padding:10px 18px;
+    border-radius:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    color:#5578d4;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+#usuarioLogado i{
+    color:#ff69b4;
+}
+
+#usuarioLogado a{
+    background:#ff69b4;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+#usuarioLogado a:hover{
+    background:#5578d4;
+}

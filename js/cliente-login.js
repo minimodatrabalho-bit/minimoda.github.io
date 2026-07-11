@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value;
 
     const { data, error } = await supabase
@@ -29,12 +29,11 @@ form.addEventListener("submit", async (e) => {
 
     }
 
-    // Salva os dados do cliente
+    // Salva o cliente logado
     localStorage.setItem("cliente", JSON.stringify(data));
 
     alert("Login realizado com sucesso!");
 
-    // Entra na loja
     window.location.href = "index.html";
 
 });

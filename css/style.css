@@ -104,38 +104,80 @@ BANNER
 ALGODÕES DOCES
 ==========================================*/
 
+.banner{
+    position: relative;
+    overflow: hidden;
+}
+
+.algodao-esquerdo,
+.algodao-direito{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #ff9fd0;
+    border-radius: 50%;
+    animation: flutuar 4s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
 .algodao-esquerdo{
-    position:absolute;
-    width:170px;
-    left:80px;
-    top:90px;
-    animation:flutuar 4s ease-in-out infinite;
-    z-index:2;
-    pointer-events:none;
+    left: 60px;
+    top: 140px;
 }
 
 .algodao-direito{
-    position:absolute;
-    width:170px;
-    right:80px;
-    top:90px;
-    animation:flutuar 4s ease-in-out infinite;
-    z-index:2;
-    pointer-events:none;
+    right: 60px;
+    top: 140px;
+}
+
+.algodao-esquerdo::before,
+.algodao-direito::before{
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 50%;
+    top: 18px;
+    left: 12px;
+}
+
+.algodao-esquerdo::after,
+.algodao-direito::after{
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,.5);
+    border-radius: 50%;
+    bottom: 18px;
+    right: 12px;
+}
+
+.palito{
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #c78b48;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border-radius: 3px;
 }
 
 @keyframes flutuar{
 
     0%{
-        transform:translateY(0);
+        transform: translateY(0);
     }
 
     50%{
-        transform:translateY(-12px);
+        transform: translateY(-12px);
     }
 
     100%{
-        transform:translateY(0);
+        transform: translateY(0);
     }
 
 }

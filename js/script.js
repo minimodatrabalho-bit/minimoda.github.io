@@ -158,3 +158,4 @@ if (footer) {
         `© ${new Date().getFullYear()} Mini Moda - Todos os direitos reservados.`;
 
 }
+console.log(localStorage.getItem("cliente"));

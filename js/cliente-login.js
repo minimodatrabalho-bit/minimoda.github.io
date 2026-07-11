@@ -1,9 +1,9 @@
-const supabaseUrl = "https://ejmnpegmicovtuihyknv.supabase.co";
-const supabaseKey = "sb_publishable_9JxyEQs6m_hMmqFK1Vo35g_sCy6GJbe";
+const SUPABASE_URL = "https://ejmnpegmicovtuihyknv.supabase.co";
+const SUPABASE_KEY = "sb_publishable_9JxyEQs6m_hMmqFK1Vo35g_sCy6GJbe";
 
 const supabase = window.supabase.createClient(
-    supabaseUrl,
-    supabaseKey
+    SUPABASE_URL,
+    SUPABASE_KEY
 );
 
 const form = document.getElementById("formLogin");
@@ -29,10 +29,12 @@ form.addEventListener("submit", async (e) => {
 
     }
 
+    // Salva os dados do cliente
     localStorage.setItem("cliente", JSON.stringify(data));
 
     alert("Login realizado com sucesso!");
 
+    // Entra na loja
     window.location.href = "index.html";
 
 });

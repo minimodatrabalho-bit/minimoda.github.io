@@ -22,49 +22,55 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="login">
 
-<div class="login-box">
+    <div class="login-box">
 
-<img src="img/banner.png" alt="Mini Moda">
+        <img src="img/banner.png" alt="Mini Moda">
 
-<h1>Login do Cliente</h1>
+        <h1>Login do Cliente</h1>
 
-<p>Entre com seu e-mail e senha.</p>
+        <p>
+            Entre com seu e-mail e senha para acessar a Mini Moda.
+        </p>
 
-<form>
+        <form>
 
-<input
-type="email"
-placeholder="E-mail"
-required>
+            <input
+            type="email"
+            id="email"
+            placeholder="Digite seu e-mail"
+            required>
 
-<input
-type="password"
-placeholder="Senha"
-required>
+            <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            required>
 
-<button type="submit" class="btn-login">
+            <button type="submit" class="btn-login">
+                Entrar
+            </button>
 
-Entrar
+        </form>
 
-</button>
+        <p style="margin-top:25px;">
 
-</form>
+            Não possui uma conta?
 
-<p style="margin-top:25px;">
+        </p>
 
-Não possui uma conta?
+        <a href="cadastro.html" class="btn-login">
 
-</p>
+            Criar Conta
 
-<a href="cadastro.html" class="btn-login">
+        </a>
 
-Criar Conta
-
-</a>
-
-</div>
+    </div>
 
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/cliente-login.js"></script>
 
 </body>
 

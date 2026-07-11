@@ -6,25 +6,73 @@
 // Mensagem no console
 console.log("Mini Moda carregado com sucesso!");
 
-// Efeito de aparecimento dos cards
+// ===============================
+// CLIENTE LOGADO
+// ===============================
+
+const cliente = JSON.parse(localStorage.getItem("cliente"));
+
+if (cliente) {
+
+    const btnLogin = document.querySelector(".btn-login");
+
+    if (btnLogin) {
+
+        btnLogin.innerHTML = `
+            <i class="fa-solid fa-user"></i>
+            Olá, ${cliente.nome.split(" ")[0]}
+        `;
+
+        btnLogin.href = "#";
+
+        btnLogin.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            if (confirm("Deseja sair da conta?")) {
+
+                localStorage.removeItem("cliente");
+
+                window.location.href = "cliente-login.html";
+
+            }
+
+        });
+
+    }
+
+}
+
+// ===============================
+// Efeito dos cards
+// ===============================
+
 const cards = document.querySelectorAll(".card");
 
 const aparecer = () => {
+
     cards.forEach(card => {
+
         const topo = card.getBoundingClientRect().top;
         const tela = window.innerHeight;
 
         if (topo < tela - 100) {
+
             card.style.opacity = "1";
             card.style.transform = "translateY(0)";
+
         }
+
     });
+
 };
 
 cards.forEach(card => {
+
     card.style.opacity = "0";
     card.style.transform = "translateY(40px)";
     card.style.transition = "0.8s";
+
 });
 
 window.addEventListener("scroll", aparecer);
@@ -62,7 +110,6 @@ botaoTopo.addEventListener("click", () => {
     window.scrollTo({
 
         top: 0,
-
         behavior: "smooth"
 
     });
@@ -70,7 +117,7 @@ botaoTopo.addEventListener("click", () => {
 });
 
 // ===============================
-// Estilo do botão
+// Estilo botão
 // ===============================
 
 botaoTopo.style.position = "fixed";
@@ -100,7 +147,7 @@ botaoTopo.addEventListener("mouseout", () => {
 });
 
 // ===============================
-// Ano automático no rodapé
+// Rodapé
 // ===============================
 
 const footer = document.querySelector("footer p");

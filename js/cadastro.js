@@ -10,7 +10,10 @@ script.onload = () => {
 
     const { createClient } = supabase;
 
-    const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+    const client = createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
 
     const form = document.getElementById("formCadastro");
 
@@ -18,9 +21,9 @@ script.onload = () => {
 
         e.preventDefault();
 
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
-        const telefone = document.getElementById("telefone").value;
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
         const senha = document.getElementById("senha").value;
         const confirmar = document.getElementById("confirmarSenha").value;
 
@@ -31,7 +34,7 @@ script.onload = () => {
 
         }
 
-        const { error } = await client
+        const { data, error } = await client
             .from("clientes")
             .insert([
                 {
@@ -40,22 +43,25 @@ script.onload = () => {
                     telefone,
                     senha
                 }
-            ]);
+            ])
+            .select()
+            .single();
 
         if (error) {
 
             alert("Erro ao cadastrar!\n\n" + error.message);
             console.log(error);
-
-        } else {
-
-            alert("Cadastro realizado com sucesso!");
-
-            form.reset();
-
-            window.location.href = "cliente-login.html";
+            return;
 
         }
+
+        // Salva o cliente como logado
+        localStorage.setItem("cliente", JSON.stringify(data));
+
+        alert("Cadastro realizado com sucesso!");
+
+        // Vai direto para a loja
+        window.location.href = "index.html";
 
     });
 

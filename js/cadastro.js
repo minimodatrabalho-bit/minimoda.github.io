@@ -1,51 +1,62 @@
-const supabaseUrl = "https://ejmnpegmicovtuihyknv.supabase.co";
+const SUPABASE_URL = "https://ejmnpegmicovtuihyknv.supabase.co";
+const SUPABASE_KEY = "sb_publishable_9JxyEQs6m_hMmqFK1Vo35g_sCy6GJbe";
 
-const supabaseKey = "sb_publishable_9JxyEQs6m_hMmqFK1Vo35g_sCy6GJbe";
+// Carrega a biblioteca do Supabase
+const script = document.createElement("script");
+script.src = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
+document.head.appendChild(script);
 
-const supabase = window.supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-);
+script.onload = () => {
 
-const form = document.getElementById("formCadastro");
+    const { createClient } = supabase;
 
-form.addEventListener("submit", async (e) => {
+    const client = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    e.preventDefault();
+    const form = document.getElementById("formCadastro");
 
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const telefone = document.getElementById("telefone").value;
-    const senha = document.getElementById("senha").value;
-    const confirmar = document.getElementById("confirmarSenha").value;
+    form.addEventListener("submit", async (e) => {
 
-    if (senha !== confirmar) {
+        e.preventDefault();
 
-        alert("As senhas não são iguais.");
-        return;
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        const senha = document.getElementById("senha").value;
+        const confirmar = document.getElementById("confirmarSenha").value;
 
-    }
+        if (senha !== confirmar) {
 
-    const { error } = await supabase
-        .from("clientes")
-        .insert([{
-            nome,
-            email,
-            telefone,
-            senha
-        }]);
+            alert("As senhas não são iguais.");
+            return;
 
-    if (error) {
+        }
 
-        console.error(error);
-        alert("Erro ao cadastrar.");
+        const { error } = await client
+            .from("clientes")
+            .insert([
+                {
+                    nome,
+                    email,
+                    telefone,
+                    senha
+                }
+            ]);
 
-    } else {
+        if (error) {
 
-        alert("Cadastro realizado com sucesso!");
+            alert("Erro ao cadastrar!\n\n" + error.message);
+            console.log(error);
 
-        window.location.href = "cliente-login.html";
+        } else {
 
-    }
+            alert("Cadastro realizado com sucesso!");
 
-});
+            form.reset();
+
+            window.location.href = "cliente-login.html";
+
+        }
+
+    });
+
+};

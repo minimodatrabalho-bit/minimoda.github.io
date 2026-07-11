@@ -1,5 +1,4 @@
 const supabaseUrl = "https://ejmnpegmicovtuihyknv.supabase.co";
-
 const supabaseKey = "sb_publishable_9JxyEQs6m_hMmqFK1Vo35g_sCy6GJbe";
 
 const supabase = window.supabase.createClient(
@@ -7,7 +6,7 @@ const supabase = window.supabase.createClient(
     supabaseKey
 );
 
-const form = document.querySelector("form");
+const form = document.getElementById("formLogin");
 
 form.addEventListener("submit", async (e) => {
 
@@ -17,24 +16,20 @@ form.addEventListener("submit", async (e) => {
     const senha = document.getElementById("senha").value;
 
     const { data, error } = await supabase
-
         .from("clientes")
-
         .select("*")
-
         .eq("email", email)
-
         .eq("senha", senha)
-
         .single();
 
     if (error || !data) {
 
-        alert("E-mail ou senha inválidos.");
-
+        alert("E-mail ou senha incorretos.");
         return;
 
     }
+
+    localStorage.setItem("cliente", JSON.stringify(data));
 
     alert("Login realizado com sucesso!");
 

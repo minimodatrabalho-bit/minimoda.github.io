@@ -31,15 +31,18 @@
          <img src="img/banner.png" alt="Mini Moda">
     </div>
 
-   <nav>
+  <nav>
+
     <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="formulario.html">Solicitar</a></li>
         <li><a href="pedidos.html">Pedidos</a></li>
-        <li><a href="login.html" class="btn-login">Entrar</a></li>
     </ul>
+
+    <div id="usuarioLogado"></div>
+
 </nav>
 </header>
 
@@ -246,7 +249,47 @@ Hortência • Jéssica • Riquelme
 </p>
 
 </footer>
-<script src="js/script.js"></script>
+<script>
+
+const cliente = JSON.parse(localStorage.getItem("cliente"));
+
+const usuario = document.getElementById("usuarioLogado");
+
+if(cliente){
+
+    usuario.innerHTML = `
+        <span>
+            <i class="fa-solid fa-user"></i>
+            Olá, <strong>${cliente.nome}</strong>
+        </span>
+
+        <a href="#" id="sair">Sair</a>
+    `;
+
+}else{
+
+    usuario.innerHTML = `
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+    `;
+
+}
+
+document.addEventListener("click", function(e){
+
+    if(e.target.id === "sair"){
+
+        localStorage.removeItem("cliente");
+
+        window.location.href = "login.html";
+
+    }
+
+});
+
+</script>
+    <script src="js/script.js"></script>
 
 </body>
 

@@ -1074,3 +1074,15 @@ LOGIN
 .btn-login i{
     margin-right:8px;
 }
+.btn-login{
+    background:#ff5ea8;
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn-login:hover{
+    background:#4f73d9;
+    transform:translateY(-2px);
+}

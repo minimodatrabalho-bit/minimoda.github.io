@@ -1,5 +1,6 @@
-const supabaseUrl = "SUA_URL_DO_SUPABASE";
-const supabaseKey = "SUA_CHAVE_ANON";
+const supabaseUrl = "https://ejmnpegmicovtuihyknv.supabase.co";
+
+const supabaseKey = "sb_publishable_9JxyEQs6m_hMmqFK1Vo35g_sCy6GJbe";
 
 const supabase = window.supabase.createClient(
     supabaseUrl,
@@ -18,38 +19,32 @@ form.addEventListener("submit", async (e) => {
     const senha = document.getElementById("senha").value;
     const confirmar = document.getElementById("confirmarSenha").value;
 
-    if(senha !== confirmar){
+    if (senha !== confirmar) {
 
         alert("As senhas não são iguais.");
-
         return;
 
     }
 
     const { error } = await supabase
-
         .from("clientes")
-
         .insert([{
-
             nome,
             email,
             telefone,
             senha
-
         }]);
 
-    if(error){
+    if (error) {
 
+        console.error(error);
         alert("Erro ao cadastrar.");
 
-        console.log(error);
-
-    }else{
+    } else {
 
         alert("Cadastro realizado com sucesso!");
 
-        window.location.href="cliente-login.html";
+        window.location.href = "cliente-login.html";
 
     }
 
